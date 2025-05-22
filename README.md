@@ -5,7 +5,7 @@ Este archivo contiene varios ejercicios para poder practicar el uso de arrays. D
 
 1. Welcome
 2. Boxes
-3. IceCream
+3. IceCream 
 4. RandomNumbers
 
 ### Instrucciones

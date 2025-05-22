@@ -1,6 +1,51 @@
+import java.util.Scanner;
+
 public class IceCream {
     public static void main(String[] args) {
-        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Cuántas bolas de helado quieres?: ");
+        int sizeIceCream = scanner.nextInt();
+        scanner.nextLine();
+
+        if (sizeIceCream < 1 || sizeIceCream > 3) {
+            System.out.println("Eso no es posible :(");
+            return;
+        }
+
+        String[] availableIceCreamFlavors = {"Chocolate", "Fresa", "Vainilla"};
+        String[] selectedFlavors = new String[sizeIceCream];
+
+        System.out.println("\n¡Perfecto! Ahora escoge de qué sabor quieres cada helado:");
+        System.out.println("    0. Chocolate");
+        System.out.println("    1. Fresa");
+        System.out.println("    2. Vainilla\n");
+
+        for (int i = 0; i < sizeIceCream; i++) {
+            System.out.print("    " + i + ". ");
+            int option = scanner.nextInt();
+            scanner.nextLine();
+            if (option >= 0 && option < availableIceCreamFlavors.length) {
+                selectedFlavors[i] = availableIceCreamFlavors[option];
+            } else {
+                System.out.println("Opción no es válida. Intenta una vez más!");
+                i--;
+            }
+        }
+
+        System.out.println("\n¡Gracias por tu orden! Has pedido los siguientes sabores:");
+        for (int i = 0; i < sizeIceCream; i++) {
+            System.out.println("    " + i + ". " + selectedFlavors[i]);
+        }
+
+        System.out.println("\n¿Es correcto? presiona cualquier tecla para continuar");
+        scanner.nextLine();
+
+        System.out.println("\n¡Listo, tenemos tu orden! Acércate al mostrador y Robotina te entregará tu helado");
+
+        scanner.close();
+    }
+}
+
         //Vamos a hacer un programa que haga un pedido online por cada helado ordenado, vamos a escoger cuantas bolas de helado le pondremos y sus sabores.
 
         //Ejemplo de como debe mostrarse en la terminal:
@@ -29,6 +74,3 @@ public class IceCream {
         //Has de usar un array para almacenar los sabores de helado y un bucle para imprimirlos.
 
         //Mira en el ejemplo los saltos de línea que has de tener.
-    
-    }
-} 
